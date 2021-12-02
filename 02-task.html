@@ -15,12 +15,21 @@
         Перепишите код, таким образом, чтобы counter1 и counter2 работали со своим значением счетчика.
         Используйте для этого замыкание.
         */
-        let counter = 0;
+
 
         function makeCounter() {
-            return function () {
-                return counter++;
+            let counter = 0;
+
+            function count() {
+                return counter++
             }
+
+            return count;
+
+
+            // return function () {
+            //     return counter++;
+            // }
         }
 
         let counter1 = makeCounter();
